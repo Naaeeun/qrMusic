@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="nav">
+      <navigate></navigate>
     </div>
-    <router-view/>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import navigate from './components/navigate.vue'
+export default {
+  data(){
+    return{
     }
+  },
+  components:{
+    navigate
+  },
+  mounted(){
+  }
+}
+</script>
+<style lang="less" scoped>
+#app{
+  height: 100vh;
+  width: 100vw;
+  .nav{
+    height: 8vh;
+    width: 100vw;
+  }
+  .content{
+    height: 92vh;
+    width: 100vw;
   }
 }
 </style>
